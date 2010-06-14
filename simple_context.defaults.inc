@@ -37,6 +37,47 @@ function _simple_context_context_default_contexts() {
   );
 
   $export['site'] = $context;
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'story';
+  $context->description = '';
+  $context->tag = '';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'story' => 'story',
+      ),
+      'options' => array(
+        'node_form' => 0,
+      ),
+    ),
+    'views' => array(
+      'values' => array(
+        'stories' => 'stories',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'comment-0' => array(
+          'module' => 'comment',
+          'delta' => 0,
+          'region' => 'right',
+          'weight' => 0,
+        ),
+      ),
+    ),
+    'menu' => 'stories',
+  );
+  $context->condition_mode = 0;
+
+  $translatables['story'] = array(
+
+  );
+
+  $export['story'] = $context;
   return $export;
 }
 
